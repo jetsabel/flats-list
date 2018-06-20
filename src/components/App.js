@@ -5,12 +5,22 @@ import Order from "./Order";
 import Inventory from "./Inventory";
 import sampleFishes from "../sample-fishes";
 import Fish from "./Fish";
+import FishList from "./FishList";
 import base from "../base";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+
+const transitionOptions = {
+  classNames: "order",
+  // key,
+  timeout: { enter: 500, exit: 500 }
+};
+
 
 class App extends React.Component {
   state = {
     fishes: {},
-    order: {}
+    order: {},
+    showAdmin: false
   };
 
   static propTypes = {
@@ -23,6 +33,7 @@ class App extends React.Component {
     const localStorageRef = localStorage.getItem(params.storeId);
     if (localStorageRef) {
       this.setState({ order: JSON.parse(localStorageRef) });
+      this.setState({ showAdmin: JSON.parse(localStorageRef) });
     }
 
     this.ref = base.syncState(`${params.storeId}/fishes`, {
@@ -95,31 +106,21 @@ class App extends React.Component {
     return (
       <div className="catch-of-the-day">
         <div className="menu">
-          <Header header="FUCKSON APARTMENTS" tagline="Accommodating your needs" />
-          <ul className="fishes">
-            {Object.keys(this.state.fishes).map(key => (
-              <Fish
-                key={key}
-                index={key}
-                details={this.state.fishes[key]}
-                addToOrder={this.addToOrder}
-              />
-            ))}
-          </ul>
+          <Header header="JACKSON APARTMENTS" tagline="Accommodating your needs" />
+          {!this.state.showAdmin ? 
+              <FishList fishes={this.state.fishes} addToOrder={this.state.addToOrder} /> 
+            :
+              <Inventory addFish={this.addFish} updateFish={this.updateFish} deleteFish={this.deleteFish} loadSampleFishes={this.loadSampleFishes} fishes={this.state.fishes} storeId={this.props.match.params.storeId} />
+          }
+        <button onClick={()=>this.setState({showAdmin: (!this.state.showAdmin)}) }>
+        {this.state.showAdmin ? "Hide" : "Admin"}
+        </button>
         </div>
         {/* <Order
           fishes={this.state.fishes}
           order={this.state.order}
           removeFromOrder={this.removeFromOrder}
         /> */}
-        <Inventory
-          addFish={this.addFish}
-          updateFish={this.updateFish}
-          deleteFish={this.deleteFish}
-          loadSampleFishes={this.loadSampleFishes}
-          fishes={this.state.fishes}
-          storeId={this.props.match.params.storeId}
-        />
       </div>
     );
   }

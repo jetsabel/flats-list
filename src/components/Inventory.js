@@ -16,7 +16,7 @@ class Inventory extends React.Component {
 
   state = {
     uid: null,
-    owner: null
+    owner: null,
   };
 
   componentDidMount() {
@@ -41,7 +41,7 @@ class Inventory extends React.Component {
     // 3. Set the state of the inventory component to reflect the current user
     this.setState({
       uid: authData.user.uid,
-      owner: store.owner || authData.user.uid
+      owner: store.owner || authData.user.uid,
     });
   };
 
@@ -63,6 +63,7 @@ class Inventory extends React.Component {
     const logout = <button onClick={this.logout}>Log Out!</button>;
 
     // 1. Check if they are logged in
+
     if (!this.state.uid) {
       return <Login authenticate={this.authenticate} />;
     }
@@ -78,25 +79,26 @@ class Inventory extends React.Component {
     }
 
     // 3. They must be the owner, just render the inventory
-    return (
-      <div className="inventory">
-        <h2>Edit Flats</h2>
-        {logout}
-        <button onClick={this.props.loadSampleFishes}>
-          Load Sample Flats
-        </button>
-        {Object.keys(this.props.fishes).map(key => (
-          <EditFishForm
-            key={key}
-            index={key}
-            fish={this.props.fishes[key]}
-            updateFish={this.props.updateFish}
-            deleteFish={this.props.deleteFish}
-          />
-        ))}
-        <AddFishForm addFish={this.props.addFish} />
-      </div>
-    );
+
+      return (
+        <div className="inventory">
+          <h2>Edit Flats</h2>
+          {logout}
+          <button onClick={this.props.loadSampleFishes}>
+            Load Sample Flats
+          </button>
+          {Object.keys(this.props.fishes).map(key => (
+            <EditFishForm
+              key={key}
+              index={key}
+              fish={this.props.fishes[key]}
+              updateFish={this.props.updateFish}
+              deleteFish={this.props.deleteFish}
+            />
+          ))}
+          <AddFishForm addFish={this.props.addFish} />
+        </div>
+      );
   }
 }
 
