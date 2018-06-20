@@ -7,6 +7,13 @@ import sampleFishes from "../sample-fishes";
 import Fish from "./Fish";
 import FishList from "./FishList";
 import base from "../base";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+
+const transitionOptions = {
+  classNames: "order",
+  // key,
+  timeout: { enter: 500, exit: 500 }
+};
 
 
 class App extends React.Component {
@@ -100,8 +107,15 @@ class App extends React.Component {
       <div className="catch-of-the-day">
         <div className="menu">
           <Header header="JACKSON APARTMENTS" tagline="Accommodating your needs" />
-          {!this.state.showAdmin ? <FishList fishes={this.state.fishes} addToOrder={this.state.addToOrder} /> : <Inventory addFish={this.addFish} updateFish={this.updateFish} deleteFish={this.deleteFish} loadSampleFishes={this.loadSampleFishes} fishes={this.state.fishes} storeId={this.props.match.params.storeId} />}
-        {/* <button onClick={this.toggleAdmin}>Admin</button> */}
+          {!this.state.showAdmin ? 
+            <CSSTransition {...transitionOptions}>
+              <FishList fishes={this.state.fishes} addToOrder={this.state.addToOrder} /> 
+            </CSSTransition>
+            :
+            <CSSTransition {...transitionOptions}>
+              <Inventory addFish={this.addFish} updateFish={this.updateFish} deleteFish={this.deleteFish} loadSampleFishes={this.loadSampleFishes} fishes={this.state.fishes} storeId={this.props.match.params.storeId} />
+            </CSSTransition>
+          }
         <button onClick={()=>this.setState({showAdmin: (!this.state.showAdmin)}) }>
         {this.state.showAdmin ? "Hide" : "Admin"}
         </button>
