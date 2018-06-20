@@ -16,7 +16,8 @@ class Inventory extends React.Component {
 
   state = {
     uid: null,
-    owner: null
+    owner: null,
+    loginComplete: false
   };
 
   componentDidMount() {
@@ -41,7 +42,8 @@ class Inventory extends React.Component {
     // 3. Set the state of the inventory component to reflect the current user
     this.setState({
       uid: authData.user.uid,
-      owner: store.owner || authData.user.uid
+      owner: store.owner || authData.user.uid,
+      loginComplete: true
     });
   };
 
