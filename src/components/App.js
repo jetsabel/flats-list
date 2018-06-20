@@ -95,7 +95,7 @@ class App extends React.Component {
     return (
       <div className="catch-of-the-day">
         <div className="menu">
-          <Header tagline="Fresh Seafood Market" />
+          <Header header="JACKSON APARTMENTS" tagline="Accommodating your needs" />
           <ul className="fishes">
             {Object.keys(this.state.fishes).map(key => (
               <Fish
@@ -107,11 +107,11 @@ class App extends React.Component {
             ))}
           </ul>
         </div>
-        <Order
+        {/* <Order
           fishes={this.state.fishes}
           order={this.state.order}
           removeFromOrder={this.removeFromOrder}
-        />
+        /> */}
         <Inventory
           addFish={this.addFish}
           updateFish={this.updateFish}

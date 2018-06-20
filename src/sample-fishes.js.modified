@@ -1,9 +1,10 @@
 // This is just some sample data so you don't have to think of your own!
 const fishes = {
-  flat1: {
+  fish1: {
     name: "The heart of Inkerman precint",
     address: "123 Inkerman street",
     suburb: "St.Kilda",
+    image: "/images/hali.jpg",
     images: ["/images/hali.jpg","/images/mahi.jpg","/images/crab.jpg"],
     desc:
       "Perfectly situated in the heart of hip Inkerman street, sunny north facing aspect and city views. ",
@@ -11,10 +12,11 @@ const fishes = {
     status: "available"
   },
 
-  flat2: {
+  fish2: {
     name: "Beachfront paradise",
     address: "449 The Esplanade",
     suburb: "St.Kilda",
+    image: "/images/oysters.jpg",
     images: ["/images/salmon.jpg", "/images/oysters.jpg"],
     desc:
       "Only a stonesthrow away from the iconic Esplanade hotel and with stunning beach views, you will be the envy of your firends!",
@@ -22,12 +24,13 @@ const fishes = {
     status: "available"
   },
 
-  flat3: {
+  fish3: {
     name: "Escape the ratrace",
     image: "/images/mussels.jpg",
     address: "12 Ormond road",
     suburb: "Balaclava",
-    address: ["/images/scallops.jpg"],
+    image: "/images/scallops.jpg",
+    images: ["/images/scallops.jpg"],
     desc:
       "Situated on a tranquil cul-de-sac, this flat is the perfect place to escape the hustle and bustle of the city",
     price: 41000,

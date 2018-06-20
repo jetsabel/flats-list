@@ -6,6 +6,7 @@ class AddFishForm extends React.Component {
   priceRef = React.createRef();
   statusRef = React.createRef();
   descRef = React.createRef();
+  phoneRef = React.createRef();
   imageRef = React.createRef();
 
   static propTypes = {
@@ -20,6 +21,7 @@ class AddFishForm extends React.Component {
       price: parseFloat(this.priceRef.value.value),
       status: this.statusRef.value.value,
       desc: this.descRef.value.value,
+      phone: this.phoneRef.value.value,
       image: this.imageRef.value.value
     };
     this.props.addFish(fish);
@@ -37,18 +39,24 @@ class AddFishForm extends React.Component {
           placeholder="Price"
         />
         <select name="status" ref={this.statusRef}>
-          <option value="available">Fresh!</option>
-          <option value="unavailable">Sold Out!</option>
+          <option value="available">Available</option>
+          <option value="unavailable">Leased</option>
         </select>
 
         <textarea name="desc" ref={this.descRef} placeholder="Desc" />
         <input
+          name="phone"
+          ref={this.phoneRef}
+          type="text"
+          placeholder="Phone"
+        />
+        {/* <input
           name="image"
           ref={this.imageRef}
           type="text"
           placeholder="Image"
-        />
-        <button type="submit">+ Add Fish</button>
+        /> */}
+        <button type="submit">+ Add Flat</button>
       </form>
     );
   }

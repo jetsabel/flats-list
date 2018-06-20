@@ -80,8 +80,11 @@ class Inventory extends React.Component {
     // 3. They must be the owner, just render the inventory
     return (
       <div className="inventory">
-        <h2>Inventory</h2>
+        <h2>Edit Flats</h2>
         {logout}
+        <button onClick={this.props.loadSampleFishes}>
+          Load Sample Flats
+        </button>
         {Object.keys(this.props.fishes).map(key => (
           <EditFishForm
             key={key}
@@ -92,9 +95,6 @@ class Inventory extends React.Component {
           />
         ))}
         <AddFishForm addFish={this.props.addFish} />
-        <button onClick={this.props.loadSampleFishes}>
-          Load Sample Fishes
-        </button>
       </div>
     );
   }
