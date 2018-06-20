@@ -108,7 +108,7 @@ class App extends React.Component {
         <div className="menu">
           <Header header="JACKSON APARTMENTS" tagline="Accommodating your needs" />
           {!this.state.showAdmin ? 
-              <FishList fishes={this.state.fishes} addToOrder={this.state.addToOrder} /> 
+              <FishList fishes={this.state.fishes} addToOrder={this.addToOrder} /> 
             :
               <Inventory addFish={this.addFish} updateFish={this.updateFish} deleteFish={this.deleteFish} loadSampleFishes={this.loadSampleFishes} fishes={this.state.fishes} storeId={this.props.match.params.storeId} />
           }
