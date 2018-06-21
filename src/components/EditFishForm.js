@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Tachyons from 'tachyons'
 
 class EditFishForm extends React.Component {
   static propTypes = {
@@ -54,10 +55,42 @@ class EditFishForm extends React.Component {
         />
         <input
           type="text"
+          name="address"
+          onChange={this.handleChange}
+          value={this.props.fish.address}
+        />
+       <input
+          type="text"
+          name="suburb"
+          onChange={this.handleChange}
+          value={this.props.fish.suburb}
+        /> 
+       <input
+          type="text"
+          name="postcode"
+          onChange={this.handleChange}
+          value={this.props.fish.postcode}
+        /> 
+        {/* <span> */}
+        <input className='tc w-40'
+          type="text"
+          name="contactName"
+          onChange={this.handleChange}
+          value={this.props.fish.contactName}
+        />        
+        <input className='tc w-30'
+          type="text"
           name="phone"
           onChange={this.handleChange}
           value={this.props.fish.phone}
         />
+        <input className='tc w-30'
+          type="text"
+          name="email"
+          onChange={this.handleChange}
+          value={this.props.fish.email}
+        />
+        {/* </span> */}
         {/* <input
           type="text"
           name="image"

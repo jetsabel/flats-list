@@ -16,7 +16,8 @@
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^2.2.1",
     "serve": "^6.5.8",
-    "stylus": "0.54.5"
+    "stylus": "0.54.5",
+    "tachyons": "^4.10.0"
   },
   "scripts": {
     "dev": "react-scripts start",

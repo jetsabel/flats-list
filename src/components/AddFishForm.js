@@ -24,11 +24,17 @@ class AddFishForm extends React.Component {
       // phone: this.phoneRef.value.value,
       // image: this.imageRef.value.value
       name: 'name me!',
-      price: parseFloat(0),
-      status: 'available',
-      desc: 'describe me!',
+      image: '/images/defaultImage.jpg',
+      address: 'street address',
       phone: '0404-555-555',
-      image: '/images/defaultImage.jpg'
+      desc: 'description',
+      price: parseFloat(0),
+      contactName: 'contact name',
+      email: 'email address',
+      suburb: 'suburb',
+      postcode: 'postcode',
+      available: false,
+      status: 'unavailable',
     };
     this.props.addFish(fish);
     // refresh the form

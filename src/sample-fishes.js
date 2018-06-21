@@ -8,6 +8,11 @@ const fishes = {
       desc:
         "Perfectly situated in the heart of hip Inkerman street, sunny north facing aspect and city views. ",
       price: 50000,
+      contactName: 'Jimmy James',
+      email: 'jimmy@james.com',
+      suburb: 'St. Kilda',
+      postcode: 'postcode',
+      available: true,
       status: "available"
   },
 
@@ -19,6 +24,11 @@ const fishes = {
     desc:
       "Only a stonesthrow away from the iconic Esplanade hotel and with stunning beach views, you will be the envy of your friends!",
     price: 70000,
+    contactName: 'Jimmy James',
+    email: 'jimmy@james.com',
+    suburb: 'St. Kilda',
+    postcode: 'postcode',
+    available: true,
     status: "available"
   },
 
@@ -30,6 +40,11 @@ const fishes = {
     desc:
       "Situated on a tranquil cul-de-sac, this flat is the perfect place to escape the hustle and bustle of the city",
     price: 45000,
+    contactName: 'Jimmy James',
+    email: 'jimmy@james.com',
+    suburb: 'Balaclava',
+    postcode: 'postcode',
+    available: false,
     status: "unavailable"
   }
 }

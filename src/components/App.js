@@ -1,19 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Header from "./Header";
-import Order from "./Order";
+// import Order from "./Order";
 import Inventory from "./Inventory";
 import sampleFishes from "../sample-fishes";
-import Fish from "./Fish";
+// import Fish from "./Fish";
 import FishList from "./FishList";
 import base from "../base";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+// import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-const transitionOptions = {
-  classNames: "order",
-  // key,
-  timeout: { enter: 500, exit: 500 }
-};
+// const transitionOptions = {
+//   classNames: "order",
+//   // key,
+//   timeout: { enter: 500, exit: 500 }
+// };
 
 
 class App extends React.Component {
@@ -103,7 +103,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="catch-of-the-day">
+      <div className="catch-of-the-day" style={{maxWidth:700}}>
         <div className="menu">
           <Header header="JACKSON APARTMENTS" tagline="Accommodating your needs" />
           {!this.state.showAdmin ? 
