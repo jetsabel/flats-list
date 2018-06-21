@@ -33,7 +33,6 @@ class App extends React.Component {
     const localStorageRef = localStorage.getItem(params.storeId);
     if (localStorageRef) {
       this.setState({ order: JSON.parse(localStorageRef) });
-      this.setState({ showAdmin: JSON.parse(localStorageRef) });
     }
 
     this.ref = base.syncState(`${params.storeId}/fishes`, {
